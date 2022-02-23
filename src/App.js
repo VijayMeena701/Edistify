@@ -5,10 +5,17 @@ import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import ScrollTop from './components/ScrollTop';
 import Toolbar from '@mui/material/Toolbar';
-import Hero from './pageComps/Hero';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
-import SecondComp from './pageComps/SecondComp';
 import theme from './components/theme';
+import Hero from './pageComps/Hero';
+const SecondComp = React.lazy(() => import('./pageComps/SecondComp'));
+const ThirdComp = React.lazy(() => import('./pageComps/ThirdComp'));
+const FourthComp = React.lazy(() => import('./pageComps/FourthComp'));
+const FifthComp = React.lazy(() => import('./pageComps/FifthComp'));
+const SixthComp = React.lazy(() => import('./pageComps/SixthComp'));
+const SeventhComp = React.lazy(() => import('./pageComps/SeventhComp'));
+const EighthComp = React.lazy(() => import('./pageComps/EighthComp'));
+const Footer = React.lazy(() => import('./components/Footer'));
 
 const App = (props) => {
 	return (
@@ -17,22 +24,21 @@ const App = (props) => {
 			<Appbar />
 			<Toolbar style={{ width: 0, height: 0, minWidth: 0, minHeight: 0 }} id="back-to-top-anchor" />
 			<Hero />
-			<SecondComp />
-			<div style={{ overflowWrap: 'break-word' }}>
-				{
-					[...new Array(422)]
-						.map((x, index) => <p key={index}>Cras mattis consectetur purus sit amet fermentum.
-							Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-							Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-							Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-						)
-				}
-			</div>
-			<ScrollTop {...props}>
-				<Fab color="secondary" size="small" aria-label="scroll back to top">
-					<KeyboardArrowUpIcon />
-				</Fab>
-			</ScrollTop>
+			<React.Suspense fallback={<div>Loading...</div>}>
+				<SecondComp />
+				<ThirdComp />
+				<FourthComp />
+				<FifthComp />
+				<SixthComp />
+				<SeventhComp />
+				<EighthComp />
+				<Footer />
+				<ScrollTop {...props}>
+					<Fab color="secondary" size="small" aria-label="scroll back to top">
+						<KeyboardArrowUpIcon />
+					</Fab>
+				</ScrollTop>
+			</React.Suspense>
 		</ThemeProvider>
 	);
 }

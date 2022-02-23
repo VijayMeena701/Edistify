@@ -10,7 +10,7 @@ import StrongNetwork from '../images/strongNetwork.svg';
 
 const Card = ({ data }) => {
     return (
-        <Grid container item sx={12} md={6} lg={4}>
+        <Grid container item xs={12} md={5} lg={3} style={{ margin: '0 auto', marginBottom: '3rem' }}>
             <Grid item xs={12} style={{ textAlign: 'center' }}>
                 <img style={{ margin: '0 auto', filter: 'invert(100%)' }} src={data.icon} alt="logos" />
             </Grid>
@@ -46,7 +46,7 @@ const cardsData = [
 
 const SecondComp = () => {
     return (
-        <Box>
+        <Box sx={{ p: '4rem 0 0 0' }}>
             <Container style={{ height: '100%' }}>
                 <Grid container>
                     {

@@ -31,10 +31,8 @@ const theme = createTheme({
             hint: 'rgba(255,255,255,0.38)',
         },
     },
-    props: {
-        MuiAppBar: {
-            color: 'transparent',
-        },
+    typography: {
+        fontFamily: ['"Poppins"', '"Roboto"', '"Helvetica"', '"Arial"', 'sans-serif'].join(',')
     },
     components: {
         MuiButton: {
