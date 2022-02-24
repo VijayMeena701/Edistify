@@ -3,6 +3,7 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import styled from '@mui/material/styles/styled';
 import { Typography } from '@mui/material';
+import {Link} from 'react-router-dom';
 
 const Wrapper = styled('div')(({ theme }) => ({
     width: '100%',
@@ -57,10 +58,10 @@ const Footer = () => {
                         <FooterItemCont>
                             <Typography variant="h6" color="black" sx={{ whiteSpace: 'nowrap' }} >Company</Typography>
                             <UnorderedList>
-                                <li><a style={{ textDecoration: 'none' }} href='/mentors' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Mentors</Typography></a></li>
-                                <li><a style={{ textDecoration: 'none' }} href='/team' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Team</Typography></a></li>
-                                <li><a style={{ textDecoration: 'none' }} href='/careers' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Careers</Typography></a></li>
-                                <li><a style={{ textDecoration: 'none' }} href='/contact' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Contact Us</Typography></a></li>
+                                <li><Link style={{ textDecoration: 'none' }} href='/mentors' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Mentors</Typography></Link></li>
+                                <li><Link style={{ textDecoration: 'none' }} href='/team' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Team</Typography></Link></li>
+                                <li><Link style={{ textDecoration: 'none' }} href='/careers' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Careers</Typography></Link></li>
+                                <li><Link style={{ textDecoration: 'none' }} href='/contact' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Contact Us</Typography></Link></li>
                             </UnorderedList>
                         </FooterItemCont>
                         <FooterItemCont>
