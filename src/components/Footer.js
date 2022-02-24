@@ -58,10 +58,10 @@ const Footer = () => {
                         <FooterItemCont>
                             <Typography variant="h6" color="black" sx={{ whiteSpace: 'nowrap' }} >Company</Typography>
                             <UnorderedList>
-                                <li><Link style={{ textDecoration: 'none' }} href='/mentors' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Mentors</Typography></Link></li>
-                                <li><Link style={{ textDecoration: 'none' }} href='/team' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Team</Typography></Link></li>
-                                <li><Link style={{ textDecoration: 'none' }} href='/careers' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Careers</Typography></Link></li>
-                                <li><Link style={{ textDecoration: 'none' }} href='/contact' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Contact Us</Typography></Link></li>
+                                <li><Link style={{ textDecoration: 'none' }} to='/mentors' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Mentors</Typography></Link></li>
+                                <li><Link style={{ textDecoration: 'none' }} to='/team' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Team</Typography></Link></li>
+                                <li><Link style={{ textDecoration: 'none' }} to='/careers' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Careers</Typography></Link></li>
+                                <li><Link style={{ textDecoration: 'none' }} to='/contact' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Contact Us</Typography></Link></li>
                             </UnorderedList>
                         </FooterItemCont>
                         <FooterItemCont>
