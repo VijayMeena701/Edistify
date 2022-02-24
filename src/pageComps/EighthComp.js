@@ -35,7 +35,7 @@ const FAQCard = styled('div')(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         flex: '0 0 33%'
     },
-    '&:nth-child(3n+1)': {
+    '&:nth-of-type(3n+1)': {
         borderLeft: '1px solid #aeb1be'
     }
 }))

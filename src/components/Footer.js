@@ -22,49 +22,83 @@ const FooterItemCont = styled('div')(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
         flexGrow: 'unset',
         padding: 0,
-        flex: '0 0 100%'
+        flex: '0 0 100%',
+        marginLeft: '0',
     },
-    '&:first-child': {
+    '&:first-of-type': {
         marginLeft: 0
+    }
+}));
+const UnorderedList = styled('ul')(({ theme, flexdiv }) => ({
+    listStyle: 'none',
+    margin: 0,
+    padding: 0,
+    display: flexdiv ? 'flex' : 'block',
+    justifyContent: 'flex-end',
+    gap: '2rem',
+    [theme.breakpoints.down('md')]: {
+        display: 'block',
+        padding: flexdiv ? '1rem 0' : '0.125rem 0  1.25rem 1rem'
     }
 }))
 
 const Footer = () => {
     return (
         <Box>
-            <Container sx={{ p: { xs: '1rem', md: '2.5rem 0rem', borderBottom: '1px solid #fff' } }}>
-                <Wrapper>
-                    <FooterItemCont>
-                        <a href="/" rel="norefferer noopener" style={{ textDecoration: 'none', }} >
-                            <Typography variant="h4" color="whitesmoke" >Edgistify</Typography>
-                        </a>
-                        <Typography sx={{ p: '1rem 0' }} variant='body2' color='whitesmoke' >Edgistify is India's Largest Plug &amp; Play Warehousing &amp; fulfillment Network helping D2C brands, SME's, Legacy Businesses, E-commerce sellers provide Amazon &amp; Flipkart like next day delivery.</Typography>
-                    </FooterItemCont>
-                    <FooterItemCont>
-                        <Typography variant="h5" color="whitesmoke" >Company</Typography>
-                        <ul style={{ listStyle: 'none' }}>
-                            <li><a style={{ textDecoration: 'none' }} href='/mentors' ><Typography sx={{ '&:hover': { color: '#ffadff' }, m: { xs: '0', sm: '10px 0', md: '0.75rem' } }} variant='body2' color='whitesmoke'>Mentors</Typography></a></li>
-                            <li><a style={{ textDecoration: 'none' }} href='/mentors' ><Typography sx={{ '&:hover': { color: '#ffadff' }, m: { xs: '0', sm: '10px 0', md: '0.75rem' } }} variant='body2' color='whitesmoke'>Team</Typography></a></li>
-                            <li><a style={{ textDecoration: 'none' }} href='/mentors' ><Typography sx={{ '&:hover': { color: '#ffadff' }, m: { xs: '0', sm: '10px 0', md: '0.75rem' } }} variant='body2' color='whitesmoke'>Careers</Typography></a></li>
-                            <li><a style={{ textDecoration: 'none' }} href='/mentors' ><Typography sx={{ '&:hover': { color: '#ffadff' }, m: { xs: '0', sm: '10px 0', md: '0.75rem' } }} variant='body2' color='whitesmoke'>Contact Us</Typography></a></li>
-                        </ul>
-                    </FooterItemCont>
-                    <FooterItemCont>
-                        <Typography variant="h5" color="whitesmoke" >Newsroom</Typography>
-                        <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-                            <li><a style={{ textDecoration: 'none' }} href='/newsroom' ><Typography sx={{ '&:hover': { color: '#ffadff' }, m: { xs: '0', sm: '10px 0', md: '0.75rem' } }} variant='body2' color='whitesmoke'>Awards</Typography></a></li>
-                            <li><a style={{ textDecoration: 'none' }} href='/newsroom' ><Typography sx={{ '&:hover': { color: '#ffadff' }, m: { xs: '0', sm: '10px 0', md: '0.75rem' } }} variant='body2' color='whitesmoke'>Media and Mentions</Typography></a></li>
-                        </ul>
-                    </FooterItemCont>
-                    <FooterItemCont>
-                        <Typography variant="h5" color="whitesmoke" >Newsroom</Typography>
-                        <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-                            <li><a style={{ textDecoration: 'none' }} href='/newsroom' ><Typography sx={{ '&:hover': { color: '#ffadff' }, m: { xs: '0', sm: '10px 0', md: '0.75rem' } }} variant='body2' color='whitesmoke'>Awards</Typography></a></li>
-                            <li><a style={{ textDecoration: 'none' }} href='/newsroom' ><Typography sx={{ '&:hover': { color: '#ffadff' }, m: { xs: '0', sm: '10px 0', md: '0.75rem' } }} variant='body2' color='whitesmoke'>Media and Mentions</Typography></a></li>
-                        </ul>
-                    </FooterItemCont>
-                </Wrapper>
-            </Container>
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'center', alignItems: 'center', gap: '3rem', p: '3rem 0', background: '#ccaacc', mt: '3rem' }}>
+                <Container sx={{ color: 'black' }}>
+                    <Wrapper>
+                        <FooterItemCont>
+                            <a href="/" rel="norefferer noopener" style={{ textDecoration: 'none', }} >
+                                <Typography variant="h4" color="inherit" >Edgistify</Typography>
+                            </a>
+                            <Typography sx={{ p: '1rem 0' }} variant='body2' color='inherit' >Edgistify is India's Largest Plug &amp; Play Warehousing &amp; fulfillment Network helping D2C brands, SME's, Legacy Businesses, E-commerce sellers provide Amazon &amp; Flipkart like next day delivery.</Typography>
+                        </FooterItemCont>
+                        <FooterItemCont>
+                            <Typography variant="h6" color="black" sx={{ whiteSpace: 'nowrap' }} >Company</Typography>
+                            <UnorderedList>
+                                <li><a style={{ textDecoration: 'none' }} href='/mentors' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Mentors</Typography></a></li>
+                                <li><a style={{ textDecoration: 'none' }} href='/team' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Team</Typography></a></li>
+                                <li><a style={{ textDecoration: 'none' }} href='/careers' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Careers</Typography></a></li>
+                                <li><a style={{ textDecoration: 'none' }} href='/contact' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Contact Us</Typography></a></li>
+                            </UnorderedList>
+                        </FooterItemCont>
+                        <FooterItemCont>
+                            <Typography variant="h6" color="black" sx={{ whiteSpace: 'nowrap' }} >Newsroom</Typography>
+                            <UnorderedList>
+                                <li><a style={{ textDecoration: 'none' }} href='/newsroom' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Awards</Typography></a></li>
+                                <li><a style={{ textDecoration: 'none' }} href='/newsroom' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Media and Mentions</Typography></a></li>
+                            </UnorderedList>
+                        </FooterItemCont>
+                        <FooterItemCont>
+                            <Typography variant="h6" color="black" sx={{ whiteSpace: 'nowrap' }} >Social Media</Typography>
+                            <UnorderedList>
+                                <li><a style={{ textDecoration: 'none' }} href='https://www.facebook.com/edgistify/' target='_blank' rel='noreferrer noopener' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Facebook</Typography></a></li>
+                                <li><a style={{ textDecoration: 'none' }} href='https://www.linkedin.com/company/edgistify/' target='_blank' rel='noreferrer noopener' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Linkedin</Typography></a></li>
+                                <li><a style={{ textDecoration: 'none' }} href='https://twitter.com/edgistify' target='_blank' rel='noreferrer noopener' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Twitter</Typography></a></li>
+                                <li><a style={{ textDecoration: 'none' }} href='https://www.instagram.com/edgistify/' target='_blank' rel='noreferrer noopener' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Instagram</Typography></a></li>
+                                <li><a style={{ textDecoration: 'none' }} href='https://www.youtube.com/edgistify' target='_blank' rel='noreferrer noopener' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Youtube</Typography></a></li>
+                            </UnorderedList>
+                        </FooterItemCont>
+                    </Wrapper>
+                </Container>
+            </Box >
+            <Box style={{ borderTop: '1px solid #fff', }} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'center', alignItems: 'center', gap: '3rem', p: '1.5rem 0', background: '#ccaacc' }}>
+                <Container>
+                    <Wrapper>
+                        <FooterItemCont>
+                            <Typography variant='body2' color='black'>© 2021 OptiSupply Chain Solution Pvt Ltd | All Rights Reserved</Typography>
+                        </FooterItemCont>
+                        <FooterItemCont>
+                            <UnorderedList flexdiv='something'>
+                                <li><a style={{ textDecoration: 'none' }} href='/newsroom' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Privacy Policy</Typography></a></li>
+                                <li><a style={{ textDecoration: 'none' }} href='/newsroom' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Terms &amp; Conditions</Typography></a></li>
+                                <li><a style={{ textDecoration: 'none' }} href='/newsroom' ><Typography sx={{ '&:hover': { color: '-webkit-link' }, m: { xs: '0', sm: '10px 0', md: '0.75rem 0' }, whiteSpace: 'nowrap' }} variant='body2' color='black'>Sitemaps</Typography></a></li>
+                            </UnorderedList>
+                        </FooterItemCont>
+                    </Wrapper>
+                </Container>
+            </Box>
         </Box>
     )
 }
