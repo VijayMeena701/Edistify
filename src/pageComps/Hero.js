@@ -20,7 +20,7 @@ const Img = styled('img')(({ theme }) => ({
 
 const Hero = () => {
     return (
-        <Box style={{ backgroundColor: '#001219' }} sx={{ height: { xs: '90vh', md: '70vh' } }} >
+        <Box style={{ backgroundColor: '#001219' }} sx={{ height: { xs: '90vh', md: '70vh' } }} id="Home" >
             <Container style={{ height: '100%' }}>
                 <Grid container style={{ height: '100%' }}>
                     <Grid item xs={12} md={7} style={{ display: 'flex', alignItems: 'center' }}>

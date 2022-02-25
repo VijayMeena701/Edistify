@@ -9,8 +9,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom';
+import ScheduleACall from './ScheduleACall';
+import PartnerWithUs from './PartnerWithUs';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const sections = ['Home', 'Solutions', 'Why Us'];
 
 
 const ResponsiveAppBar = () => {
@@ -27,16 +31,21 @@ const ResponsiveAppBar = () => {
     return (
         <AppBar position="sticky">
             <Container>
-                <Toolbar disableGutters style={{ alignItems: 'center' }} >
-                    <Typography
-                        variant="h3"
-                        noWrap
-                        component="div"
-                        style={{ fontWeight: '700', padding: '0.5rem 0' }}
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                    >
-                        Edgistify
-                    </Typography>
+                <Toolbar disableGutters style={{ alignItems: 'center', display: 'flex', justifyContent: 'space-between' }} >
+                    <ScrollLink activeClass="active" spy={true} smooth={true} offset={-78} duration={300} style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }} to="Home">
+                        <Link to="/" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
+                            <Typography
+                                variant="h3"
+                                noWrap
+                                component="div"
+                                style={{ fontWeight: '700', padding: '0.5rem 0' }}
+                                sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                            >
+                                Edgistify
+                            </Typography>
+                        </Link>
+                    </ScrollLink>
+
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -67,7 +76,7 @@ const ResponsiveAppBar = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
+                            {sections.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">{page}</Typography>
                                 </MenuItem>
@@ -83,50 +92,43 @@ const ResponsiveAppBar = () => {
                     >
                         Edgistify
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'flex-end', gap: '1.5rem', alignItems: 'center' } }}>
+                        <ScrollLink activeClass="active" spy={true} smooth={true} offset={-78} duration={300} style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }} to="Home">
+                            <Link to="/" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
+                                <Button
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block', background: 'none', boxShadow: 'none' }}
+                                >
+                                    Home
+                                </Button>
+                            </Link>
+                        </ScrollLink>
+                        <ScrollLink activeClass="active" spy={true} smooth={true} offset={-78} duration={300} style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }} to="Solutions">
+                            <Link to="/" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
+                                <Button
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block', background: 'none', boxShadow: 'none' }}
+                                >
+                                    Solutions
+                                </Button>
+                            </Link>
+                        </ScrollLink>
+                        <ScrollLink activeClass="active" spy={true} smooth={true} offset={-78} duration={300} style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }} to="Why_us">
+                            <Link to="/" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
+                                <Button
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block', background: 'none', boxShadow: 'none' }}
+                                >
+                                    Why us
+                                </Button>
+                            </Link>
+                        </ScrollLink>
+                        <ScheduleACall />
+                        <PartnerWithUs />
                     </Box>
-
-                    {/* <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: '45px' }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box> */}
                 </Toolbar>
             </Container>
-        </AppBar>
+        </AppBar >
     );
 };
 export default ResponsiveAppBar;

@@ -59,7 +59,7 @@ const ServiceCard = ({ service }) => {
 
 const FourthComp = () => {
     return (
-        <Box>
+        <Box id="Solutions">
             <Container sx={{ height: '100%', p: '4rem 0 0 0' }}>
                 <Typography textAlign='center' sx={{ fontWeight: '500', p: { xs: '0 1rem', sm: 0 }, fontSize: { xs: '1.95rem', md: '2.5rem' }, lineHeight: '1.4285' }} variant="h4" >Services</Typography>
                 <SectionDivider />

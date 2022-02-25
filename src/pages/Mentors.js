@@ -108,7 +108,6 @@ const Mentors = () => {
             <Container sx={{ height: '100%', p: '4rem 0 0 0' }}>
                 <Typography textAlign='center' sx={{ fontWeight: '500', p: { xs: '0 1rem', sm: 0 }, lineHeight: '1.4285' }} variant="h3" >Mentors</Typography>
                 <img loading="lazy" src='https://www.edgistify.com/assets/js/new/a02481caf556b4d724a86ce0768b95c2.jpg' alt="" style={{ backdropFilter: 'blur(10px)', height: '100%', width: '100%', objectFit: 'contain', filter: 'grayscale(20%) sepia(10%) invert(100%)' }} />
-
                 <Typography variant='h6' sx={{ fontWeight: '200', p: { xs: '0 1rem', sm: 0 }, lineHeight: '1.4285' }}>The most valuable asset to any organization is the group of industry experts that guides through in developing the vision and methodology that perfectly aligns with the market requirements. Our mentors are the driving force behind our organizational ingenuity and proficiency.</Typography>
                 <Typography textAlign='center' sx={{ fontWeight: '500', p: { xs: '1rem 1rem 0', sm: '2rem 0 0' }, fontSize: { xs: '1.95rem', md: '2.5rem' }, lineHeight: '1.4285' }} variant="h4" >Our mentors</Typography>
                 <Grid container>
